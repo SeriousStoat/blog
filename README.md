@@ -1,2 +1,2 @@
 # Blog
-A simple blog made with Node.js
+A simple blog made with Django.
