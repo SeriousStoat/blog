@@ -8,9 +8,9 @@
             <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
             <small>
                 {{ post.created_on.date }} | Catergories:
-                {% for catergory in post.catergories.all %}
-                    <a href="{% url 'blog_catergory' catergory.name %}">
-                        {{ catergory.name }}
+                {% for category in post.categories.all %}
+                    <a href="{% url 'blog_category' category.name %}">
+                        {{ category.name }}
                     </a>
                 {% endfor %}
             </small>
