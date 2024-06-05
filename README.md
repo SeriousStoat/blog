@@ -1,2 +1,2 @@
 # Blog
-A simple blog made with Django.
+A simple blog made with the Django web framework.
