@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('blog_app', '0001_initial'),
+        ('blog', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
             name='category',
-            options={'verbose_name_plural': 'catagories'},
+            options={'verbose_name_plural': 'categories'},
         ),
     ]
