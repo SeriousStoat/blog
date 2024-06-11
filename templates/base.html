@@ -7,8 +7,17 @@
   <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
 </head>
 <body>
-  <h1>My Blog</h1>
-  <a href="{% url "blog_index" %}">Home</a>
+  <header>
+    <h1>My Blog</h1>
+    <nav>
+      <a href="{% url 'blog_index' %}">Home</a>
+      <a href="#authors">Authors</a>
+      <input type="search" name="cat_search" id="cat_search" placeholder="Search Tags">
+      <a href="{% url 'blog_about' %}">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
   <hr>
   {% block page_title %}{% endblock page_title %}
   {% block page_content %}{% endblock page_content %}

@@ -4,6 +4,8 @@ from blog.models import Post, Comment
 from blog.forms import CommentForm
 
 # Create your views here.
+def blog_about(request):
+    return render(request, "blog/about.html")
 
 def blog_index(request):
     posts = Post.objects.all().order_by("-created_on")
