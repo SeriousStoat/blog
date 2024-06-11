@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('body', models.TextField()),
                 ('created_on', models.DateTimeField(auto_now_add=True)),
                 ('last_modified', models.DateTimeField(auto_now=True)),
-                ('categories', models.ManyToManyField(related_name='post', to='blog_app.category')),
+                ('categories', models.ManyToManyField(related_name='post', to='blog.category')),
             ],
         ),
         migrations.CreateModel(
@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
                 ('author', models.CharField(max_length=60)),
                 ('body', models.TextField()),
                 ('created_on', models.DateTimeField(auto_now_add=True)),
-                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog_app.post')),
+                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.post')),
             ],
         ),
     ]

@@ -1,7 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from blog_app.models import Post, Comment
-from blog_app.forms import CommentForm
+from blog.models import Post, Comment
+from blog.forms import CommentForm
 
 # Create your views here.
 
@@ -10,7 +10,7 @@ def blog_index(request):
     context = {
         "posts": posts,
     }
-    return render(request, "blog_app/index.html", context)
+    return render(request, "blog/index.html", context)
 
 def blog_category(request, category):
     posts = Post.objects.filter(
@@ -20,7 +20,7 @@ def blog_category(request, category):
         "category":category,
         "posts": posts,
     }
-    return render(request, "blog_app/category.html", context)
+    return render(request, "blog/category.html", context)
 
 def blog_detail(request, pk):
     post = Post.objects.get(pk=pk)
@@ -43,4 +43,4 @@ def blog_detail(request, pk):
         "form": CommentForm(),
     }
 
-    return render(request, "blog_app/detail.html", context)
+    return render(request, "blog/detail.html", context)
