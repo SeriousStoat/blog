@@ -46,3 +46,14 @@ def blog_detail(request, pk):
     }
 
     return render(request, "blog/detail.html", context)
+
+def search_feature(request):
+    # Check if the request is a post request.
+    if request.method == 'POST':
+        # Retrieve the search query entered by the user
+        search_query = request.POST['search_query']
+        # Filter your model by the search query
+        posts = Post.objects.filter(body__contains=search_query)
+        return render(request, 'blog/search.html', {'query':search_query, 'posts':posts})
+    else:
+        return render(request, 'blog/search.html',{})

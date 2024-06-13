@@ -7,6 +7,7 @@
 {% block page_content %}
     {% block posts %}
         {% for post in posts %}
+        <article>
             <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
             <small>
                 {{ post.created_on.date }} | Catergories:
@@ -16,7 +17,9 @@
                     </a>
                 {% endfor %}
             </small>
-            <p>{{ post.body | slice:":400" }}...</p>
+            
+                <p>{{ post.body | slice:":400" }}...</p>
+        </article>
         {% endfor %}
     {% endblock posts %}
 {% endblock page_content %}

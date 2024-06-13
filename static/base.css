@@ -295,16 +295,6 @@ header > nav a[aria-current="page"] {
   cursor: pointer;
 }
 
-/* Reduce nav side on mobile */
-@media only screen and (max-width: 720px) {
-  header > nav a {
-    border: none;
-    padding: 0;
-    text-decoration: underline;
-    line-height: 1;
-  }
-}
-
 /* Consolidate box styling */
 aside, details, pre, progress {
   background-color: var(--accent-bg);
@@ -429,8 +419,8 @@ button,
 .button {
   font-size: inherit;
   font-family: inherit;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
+  padding: 0.4rem;
+  margin-bottom: 1rem;
   border-radius: var(--standard-border-radius);
   box-shadow: none;
   max-width: 100%;
