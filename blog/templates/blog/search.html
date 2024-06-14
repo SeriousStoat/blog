@@ -1,13 +1,29 @@
-{% if query %}
-    <div>
+{% extends "base.html" %}
+{% block page_title %}
+    <h2>Search Results:  <span style="font-size:25px">"{{ query }}"</span></h2>
+{% endblock page_title %}
+{% block page_content %}
+    {% if query %}
         <div>
-        {% for post in posts %}
             <div>
-                <p>{{post.title}}</p>
+            {% for post in posts %}
+                <article>
+                    <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+                    <small>
+                        {{ post.created_on.date }} | Catergories:
+                        {% for category in post.categories.all %}
+                            <a href="{% url 'blog_category' category.name %}">
+                                {{ category.name }}
+                            </a>
+                        {% endfor %}
+                    </small>
+                    <p>{{ post.body | slice:":400" }}...</p>
+                </article>
+            {% endfor %}
             </div>
-        {% endfor %}
         </div>
-    </div>
-{% else %}
-    <h1>Please enter a search query</h1>
-{% endif %}
+    {% else %}
+        <h2>Please enter a search query</h2>
+    {% endif %}
+{% endblock page_content %}
+
